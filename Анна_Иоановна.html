@@ -1,0 +1,261 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", system-ui, sans-serif;
+}
+
+body {
+    background: #e6dcc8;
+    color: #2f2b24;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    line-height: 1.7;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(1.5rem, 5vw, 3rem);
+    align-items: center;
+    justify-content: center;
+}
+
+/* БЛОК С ТЕКСТОМ (слева) */
+.info-card {
+    flex: 1.2;
+    min-width: 280px;
+    background: #fefaf2;
+    padding: 1.8rem;
+    border-radius: 24px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e8dccc;
+}
+
+.info-card p {
+    font-size: clamp(10px, 1.1vw, 20px);
+    line-height: 1.9;
+    color: #333;
+}
+
+.info-card p:last-child {
+    margin-bottom: 0;
+}
+
+/* БЛОК С КАРТИНКОЙ (справа) — центрирование изображения внутри */
+.image-card {
+    flex: 0.8;
+    min-width: 260px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f3ede3;
+    border-radius: 28px;
+    padding: 1rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e0d4be;
+}
+
+.image-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    display: block;
+    object-fit: cover;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+/* КАРТОЧКА С ГОДАМИ И ИМЕНЕМ (шапка) */
+.card-small {
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-top: 0.5rem;
+}
+
+.years {
+    display: inline-block;
+    background: #d9c5a7;
+    padding: 0.3rem 1rem;
+    border-radius: 40px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    color: #3e2a1f;
+    font-weight: 600;
+}
+
+.card-small h2 {
+    font-size: 3rem;
+    margin-top: 0.5rem;
+    color: #2c1d12;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+/* ОСНОВНОЙ БЛОК */
+.timeline-section {
+    width: 100%;
+    max-width: clamp(1500px, 3vw, 2000px);
+    background: #f3ede2;
+    padding: 45px 55px 65px;
+    border-radius: 18px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(120, 98, 55, 0.08);
+}
+
+/* ЛЕВАЯ ПОЛОСА */
+.timeline-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 8px;
+    height: 100%;
+    background: #c5a54b;
+    border-radius: 18px 0 0 18px;
+}
+
+.timeline-section {
+    overflow: hidden;
+}
+
+/* ЗАГОЛОВОК */
+.page-title {
+    margin-top: 20px;
+    font-size: 56px;
+    font-weight: 800;
+    line-height: 1.05;
+    color: #2d2418;
+    margin-bottom: 20px;
+}
+
+.page-title span {
+    display: block;
+    font-weight: 400;
+    color: #6f6453;
+}
+
+/* АВТОР */
+.author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 38px;
+}
+
+.author img {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #d5c19a;
+}
+
+.author span {
+    color: #857764;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+/* КАРТИНКА */
+.hero-image {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 18px;
+    margin-bottom: 16px;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+}
+
+.hero-image img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+/* ПОДПИСЬ */
+.image-caption {
+    font-size: 14px;
+    color: #9d907b;
+    margin-bottom: 34px;
+}
+
+/* ТЕКСТ */
+.article-text {
+    font-size: 22px;
+    color: #5c5143;
+    line-height: 1.9;
+}
+
+.article-text p {
+    margin-bottom: 28px;
+}
+
+/* АКЦЕНТЫ */
+.article-text strong {
+    color: #2f2418;
+    font-weight: 700;
+}
+
+/* ССЫЛКИ */
+.article-text a {
+    color: #8b6b2e;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: .3s;
+}
+
+.article-text a:hover {
+    border-color: #8b6b2e;
+}
+
+/* НИЖНЯЯ ЛИНИЯ */
+.bottom-line {
+    width: 100%;
+    height: 1px;
+    background: #d7cab4;
+    margin-top: 35px;
+}
+
+.back-button-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 100;
+}
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: #a28024;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border: none;
+    cursor: pointer;
+}
+
+.back-button:hover {
+    background-color: #a28024;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.back-button:active {
+    transform: translateY(0);
+}
+
+/* Стрелка для кнопки */
+.back-button::before {
+    content: "←";
+    font-size: 18px;
+    font-weight: bold;
+}
