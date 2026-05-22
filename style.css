@@ -1,0 +1,201 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", system-ui, sans-serif;
+}
+
+body {
+    background: #f5f7fb;
+    color: #1a1a1a;
+    overflow-x: hidden;
+}
+
+section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+}
+
+h1 {
+    font-size: clamp(42px, 5vw, 72px);
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: clamp(20px, 2vw, 40px);
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: clamp(16px, 1.2vw, 26px);
+    line-height: 1.9;
+    color: #333;
+}
+
+/* HERO */
+.hero {
+    /* background: linear-gradient(120deg, #dfe9f3, #ffffff); */
+    background: #e8dbc6;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero button {
+    margin-top: 30px;
+    padding: 14px 28px;
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: clamp(18px, 1.2vw, 28px);
+    font-weight: 600;
+}
+
+/* timeline */
+.timeline::before {
+    content: "";
+    position: fixed;
+    left: 60px;
+    top: 0;
+    width: clamp(5px, 1.5vw, 10px);
+    height: 100%;
+    background: linear-gradient(#1f1f1f, #E6C200 65%);
+}
+
+/* layout */
+.row {
+    display: flex;
+    gap: 40px;
+    margin-left: 50px;
+    width: 100%;
+    align-items: center;
+    /* ключевое изменение */
+}
+
+/* левый блок */
+.block {
+    flex: 0.5;
+    background: white;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+
+    align-self: center;
+    /* дополнительно фиксируем */
+
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.8s;
+}
+
+/* средний блок*/
+.details {
+    flex: 1.6;
+    background: white;
+    border-left: 6px solid #ebc04a;
+    border-radius: 16px;
+    padding: clamp(24px, 4vw, 60px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    min-height: 60vh;
+
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.8s;
+}
+
+/* правый блок */
+.photo{
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.8s;
+}
+
+.photo img{
+    width: clamp(300px, 24vw, 1200px);
+    height: clamp(500px, 24vw, 2000px);
+    margin: 0 auto;
+
+    border-radius: 25px;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.details p {
+    font-size: clamp(16px, 1.2vw, 26px);
+}
+
+.block.visible,
+.details.visible,
+.photo.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.date {
+    font-weight: 600;
+    color: #a28024;
+    font-size: clamp(16px, 1.2vw, 26px);
+    margin-bottom: 10px;
+}
+
+/* цвета фонов */
+.b1 {
+    background: #F5E9D3;
+}
+
+.b2 {
+    background: #F3E6C7;
+}
+
+.b3 {
+    background: #EAD9B5;
+}
+
+.b4 {
+    background: #EFE1C2;
+}
+
+.footer {
+    justify-content: center;
+    text-align: center;
+}
+
+/* Перемещение по странице */
+
+.scroll-buttons {
+    position: fixed;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 1000;
+}
+
+.scroll-buttons button {
+    width: 55px;
+    height: 55px;
+    border: none;
+    border-radius: 50%;
+    background: #8b6f20;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.scroll-buttons button:hover {
+    background: #555;
+    transform: scale(1.1);
+}
